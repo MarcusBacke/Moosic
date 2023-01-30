@@ -2,8 +2,8 @@
 
 ## Project
 
-![description](/images/project_description.png)
+![description](/img/project_description.png)
 
 ## Structure
 
-![structure](/images/structure.png)
+![structure](/img/structure.png)
