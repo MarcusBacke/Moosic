@@ -45,6 +45,7 @@
 							 Style="{StaticResource MenuButtonTheme}"
                              IsChecked="True"
                              Command="{Binding HomeViewCommand}"/>
+                
                 <RadioButton Content="Spotify"
                              Height="50"
                              Foreground="White"
@@ -57,6 +58,7 @@
                              Foreground="White"
                              FontSize="14"
 							 Style="{StaticResource MenuButtonTheme}"/>
+                
                 <RadioButton Content="YouTube Music"
                              Height="50"
                              Foreground="White"
