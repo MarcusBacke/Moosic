@@ -36,7 +36,7 @@
                     </StackPanel>
                     <Image
                         Source="/Images/the-doors-cover.jpg" 
-                        Margin="140,0,-20,-73"/>
+                        Margin="150,6,-30,-79"/>
                 </Grid>
             </Border>
             <Border Width="200"
@@ -77,7 +77,7 @@
                 </StackPanel.Resources>
 
             </StackPanel>
-            
+
             <Button Content="PLay/Pause" Height="27" Width="69"/>
             <Button Content="Skip" Height="27" Width="69" Margin="200,0,0,0"/>
             <Button Content="Skip Back" Height="27" Width="69" Margin="-200,0,0,0"/>
