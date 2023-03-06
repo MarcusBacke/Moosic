@@ -36,11 +36,7 @@
                     </StackPanel>
                     <Image
                         Source="/Images/the-doors-cover.jpg" 
-<<<<<<< HEAD
-                        Margin="150,6,-30,-79"/>
-=======
                         Margin="140,0,-20,-73"/>
->>>>>>> parent of e7c5833 (Revert "We have buttoning buttons")
                 </Grid>
             </Border>
             <Border Width="200"
@@ -81,11 +77,7 @@
                 </StackPanel.Resources>
 
             </StackPanel>
-<<<<<<< HEAD
-
-=======
             
->>>>>>> parent of e7c5833 (Revert "We have buttoning buttons")
             <Button Content="PLay/Pause" Height="27" Width="69"/>
             <Button Content="Skip" Height="27" Width="69" Margin="200,0,0,0"/>
             <Button Content="Skip Back" Height="27" Width="69" Margin="-200,0,0,0"/>

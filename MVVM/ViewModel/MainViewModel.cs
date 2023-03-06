@@ -34,32 +34,6 @@ namespace Moosic.MVVM.ViewModel
             HomeViewCommand = new RelayCommand(o => { CurrentView = HomeVM; });
             PlayerViewCommand = new RelayCommand(o => { CurrentView = PlayerVM; });
             SpotifyViewCommand = new RelayCommand(o => { CurrentView = SpotifyVM; });
-<<<<<<< HEAD
-            Songs = new ObservableCollection<Item>();
-            PopulateCollection();
-        }
-
-        void PopulateCollection()
-        {
-            var client = new RestClient();
-            client.Authenticator = new OAuth2AuthorizationRequestHeaderAuthenticator("BQAGLkN6rCU6w1vCsZDOwTNVGQSnZSDg0NFVTkJNz4tOQ4EHdYuwXTR8UeFuziJjAaTDAExgXxSbGAZsxx8Am5Q7KO0hdLe41GQUXVf4B2NzbXfbqVKTiMERgfmYdssKdfcYDmZmEPLWnMh3Q4MottW07TPB7OD7XdeyUhgTv7cexLY");
-
-            var request = new RestRequest("https://api.spotify.com/v1/browse/new-releases", Method.Get);
-            request.AddHeader("Accept", "application/json");
-            request.AddHeader("Content-Type", "application/json");
-
-            var response = client.GetAsync(request).GetAwaiter().GetResult();
-            var data = JsonConvert.DeserializeObject<TrackModel>(response.Content);
-
-            for (int i = 0; i < data.Albums.Limit; i++)
-            {
-                var track = data.Albums.Items[i];
-                track.Duration = "2:32";
-                Songs.Add(track);
-            }
-
-=======
->>>>>>> parent of e7c5833 (Revert "We have buttoning buttons")
             SettingsViewCommand= new RelayCommand(o => { CurrentView= SettingsVM; });
         }
     }
