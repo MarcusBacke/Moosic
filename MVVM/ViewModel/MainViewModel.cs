@@ -6,7 +6,6 @@ namespace Moosic.MVVM.ViewModel
     class MainViewModel : ObservableObject
     {
         private object _currentView;
-        public ObservableCollection<Item> Songs { get; set; }
 
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand SettingsViewCommand { get; set; }
