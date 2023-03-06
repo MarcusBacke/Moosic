@@ -63,7 +63,7 @@
                                      Margin="0,35,10,10" Width="100"
                                      HorizontalAlignment="Center"
                                      Opacity="0.7"
-                                     BorderThickness="0.5"/>
+                                     BorderThickness="0.6"/>
                     </StackPanel>
                 </Grid>
             </Border>
