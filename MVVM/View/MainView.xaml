@@ -92,11 +92,7 @@
                         Background="#4eff91"
                         CornerRadius="10"/>
                 
-                <Border Width="150"
-                        Height="150"
-                        Background="#ecff4e"
-                        CornerRadius="10"/>
-                
+				<Button Name="btnOpenAudioFile" Click="btnOpenAudioFile_Click">Open Audio file</Button>
             </StackPanel>
         </StackPanel>
     </StackPanel>
