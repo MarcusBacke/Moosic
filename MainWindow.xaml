@@ -51,7 +51,7 @@
                              Foreground="White"
                              FontSize="14"
 							 Style="{StaticResource MenuButtonTheme}"
-                             Command="{Binding SpotifyViewCommand}" Checked="RadioButton_Checked_2"/>
+                             Command="{Binding SpotifyViewCommand}"/>
 
                 <RadioButton Content="SoundCloud"
                              Height="50"
@@ -78,8 +78,7 @@
                             Grid.Column="1" 
                             Margin="10"
                             Content="{Binding CurrentView}"/>
-            <Button Grid.Column="1" Content="Settings&#xD;&#xA;" HorizontalAlignment="Left" Height="40" Margin="651,0,0,0" VerticalAlignment="Center" Width="49" Click="Button_Click"/>
-
+            
         </Grid>
 
     </Border>
