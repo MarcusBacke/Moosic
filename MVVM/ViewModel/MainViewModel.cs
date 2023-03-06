@@ -34,6 +34,7 @@ namespace Moosic.MVVM.ViewModel
             HomeViewCommand = new RelayCommand(o => { CurrentView = HomeVM; });
             PlayerViewCommand = new RelayCommand(o => { CurrentView = PlayerVM; });
             SpotifyViewCommand = new RelayCommand(o => { CurrentView = SpotifyVM; });
+<<<<<<< HEAD
             Songs = new ObservableCollection<Item>();
             PopulateCollection();
         }
@@ -57,6 +58,8 @@ namespace Moosic.MVVM.ViewModel
                 Songs.Add(track);
             }
 
+=======
+>>>>>>> parent of e7c5833 (Revert "We have buttoning buttons")
             SettingsViewCommand= new RelayCommand(o => { CurrentView= SettingsVM; });
         }
     }
