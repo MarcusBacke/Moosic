@@ -18,9 +18,9 @@ namespace Moosic.MVVM.View
     /// <summary>
     /// Interaction logic for MainView.xaml
     /// </summary>
-    public partial class MainView : UserControl
+    public partial class PlayerView : UserControl
     {
-        public MainView()
+        public PlayerView()
         {
             InitializeComponent();
         }
