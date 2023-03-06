@@ -20,9 +20,6 @@ namespace Moosic.MVVM.View
     /// </summary>
     public partial class MainView : UserControl
     {
-        public MainView()
-        {
-            InitializeComponent();
-        }
+        public MainView() => InitializeComponent();
     }
 }
