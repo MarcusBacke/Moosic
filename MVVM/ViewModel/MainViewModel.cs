@@ -30,7 +30,7 @@ namespace Moosic.MVVM.ViewModel
             SpotifyVM = new SpotifyViewModel();
             SettingsVM = new SettingsViewModel();
             PlayerVM = new PlayerViewModel();
-            CurrentView = HomeVM;
+            CurrentView = PlayerVM;
             HomeViewCommand = new RelayCommand(o => { CurrentView = HomeVM; });
             PlayerViewCommand = new RelayCommand(o => { CurrentView = PlayerVM; });
             SpotifyViewCommand = new RelayCommand(o => { CurrentView = SpotifyVM; });

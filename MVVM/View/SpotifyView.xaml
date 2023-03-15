@@ -4,69 +4,82 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Moosic.MVVM.View"
-             mc:Ignorable="d" 
+         mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    
-    <StackPanel>
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Images/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <StackPanel Margin="0,0,0,-39">
         <TextBlock Text="Spotify"
                    Foreground="White"
                    FontSize="28"
                    HorizontalAlignment="Left"
                    FontFamily="/Fonts/#Poppins"
                    Margin="0,0,0,20"/>
-        <StackPanel Orientation="Vertical">
-            <Border Width="200" 
-                    Height="300"
-                    >
-                <Border.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                        <GradientStop Color="#1ED760" Offset="0.0"/>
-                        <GradientStop Color="AliceBlue" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
+        <Border Margin="10">
+            <Grid>
+                <DockPanel RenderTransformOrigin="0.14,0.496" Margin="0,-29,0,41">
 
-                <Border.Clip>
-                    <RectangleGeometry RadiusX="10"
-                                       RadiusY="10"
-                                       Rect="0,0,200,300"/>
-                </Border.Clip>
-                <Grid>
-                    <StackPanel>
-                        <TextBlock Text="Login"
-                                   Foreground="Wheat"
-                                   FontFamily="/Fonts/#Poppins"
-                                   FontSize="24"
-                                   Margin="10,10,10,0" Width="70"/>
-                        <TextBlock Text="Username"
+                    <Grid Height="405" Width="299" RenderTransformOrigin="0.464,0.493" HorizontalAlignment="Left">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="128*" />
+                            <RowDefinition Height="141*"/>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Search Music"
                                    Foreground="White"
                                    FontFamily="/Fonts/#Poppins"
                                    FontSize="16"
-                                   Margin="10,25,10,0"/>
-                        <TextBox Width="120"
-                                     Background="white" Opacity="0.5"
-                                     HorizontalAlignment="Left"
-                                     Margin="10,0,0,0"/>
-                        <TextBlock Text="Password"
-                                   Foreground="White"
-                                   FontFamily="/Fonts/#Poppins"
-                                   FontSize="16"
-                                   Margin="10,25,10,0"/>
-                        <PasswordBox Width="120"
-                                     Background="white" Opacity="0.5"
-                                     HorizontalAlignment="Left"
-                                     Margin="10,0,0,0"/>
-                        <Button Content="Login"
-                                     Height="25"
-                                     Foreground="Black"
-                                     FontSize="12"
-                                     Command="{Binding SpotifyViewCommand}"
-                                     Margin="0,35,10,10" Width="100"
-                                     HorizontalAlignment="Center"
-                                     Opacity="0.7"
-                                     BorderThickness="0.5"/>
-                    </StackPanel>
-                </Grid>
-            </Border>
-        </StackPanel>
+                                   Margin="0,0,0,30" RenderTransformOrigin="0.492,0.612" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+
+                        <StackPanel
+                       >
+
+                            <TextBox Width="279"
+                            x:Name="txtSearch"
+                             KeyUp="txtSearch_KeyUp"
+                            Background="white" Opacity="0.5"
+                            Margin="10,20,0,0"
+                            Style="{StaticResource TextBoxSearch}"
+                            Template="{StaticResource TextBoxBaseControlTemplate}" Height="27" VerticalAlignment="Bottom" HorizontalAlignment="Left" />
+                        </StackPanel>
+                        <ListView
+                        x:Name="ListArtist"
+                        Grid.Row="1"
+                        Margin="10,10,10,10"
+                        Background="{StaticResource BackgroundColorWindow2}"
+                        ItemTemplate="{StaticResource ResourceKey=ListArtistTemplate}" Grid.RowSpan="2" RenderTransformOrigin="0.506,0.575" >
+                            <ListView.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="0.441"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </ListView.RenderTransform>
+                        </ListView>
+
+                        <StackPanel
+                        Grid.Row="3"
+                        Margin="141,10,0,0"
+                        HorizontalAlignment="Left"
+                        Orientation="Horizontal" Width="100">
+                            <TextBlock VerticalAlignment="Bottom" Text="Powered by" />
+                            <Image Height="20" Source="https://cdn.icon-icons.com/icons2/2201/PNG/512/spotify_logo_icon_134023.png" />
+                        </StackPanel>
+                    </Grid>
+
+                </DockPanel>
+
+
+            </Grid>
+        </Border>
     </StackPanel>
+
 </UserControl>

@@ -12,8 +12,8 @@
                 <ResourceDictionary Source="Theme/TextboxTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
-            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
-                <view:MainView/>
+            <DataTemplate DataType="{x:Type viewModel:PlayerViewModel}">
+                <view:PlayerView/>
             </DataTemplate>
 
             <DataTemplate DataType="{x:Type viewModel:SpotifyViewModel}">
