@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Moosic.MVVM.ViewModel
 {
-    internal class SpotifyViewModel
+    public class SpotifyViewModel
     {
     }
 }

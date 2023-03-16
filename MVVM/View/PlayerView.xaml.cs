@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,22 @@ namespace Moosic.MVVM.View
         public PlayerView()
         {
             InitializeComponent();
+        }
+
+        private MediaPlayer mediaPlayer = new MediaPlayer();
+
+        public void MediaPlayerAudioSample() => InitializeComponent();
+
+        private void btnOpenAudioFile_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            //this is a filter,, this might be wrong, but if you one to add a filter in the future you can based you code in this.
+           // openFileDialog.Filter = "MP3 files (.mp3)|.mp3|All files (.)|.";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                mediaPlayer.Open(new Uri(openFileDialog.FileName));
+                mediaPlayer.Play();
+            }
         }
     }
 }
