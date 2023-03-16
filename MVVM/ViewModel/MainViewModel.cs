@@ -1,5 +1,7 @@
 ﻿using Moosic.Core;
 using System;
+using System.Windows;
+using System.Windows.Input;
 
 namespace Moosic.MVVM.ViewModel
 {
@@ -35,6 +37,8 @@ namespace Moosic.MVVM.ViewModel
             PlayerViewCommand = new RelayCommand(o => { CurrentView = PlayerVM; });
             SpotifyViewCommand = new RelayCommand(o => { CurrentView = SpotifyVM; });
             SettingsViewCommand= new RelayCommand(o => { CurrentView= SettingsVM; });
+
         }
+
     }
 }
