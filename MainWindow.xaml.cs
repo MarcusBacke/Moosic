@@ -44,5 +44,19 @@ namespace Moosic
         {
 
         }
+
+        private void RadioButton_Checked_3(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
+
+        private void ManualClose(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

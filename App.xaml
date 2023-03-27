@@ -19,6 +19,10 @@
             <DataTemplate DataType="{x:Type viewModel:SpotifyViewModel}">
                 <view:SpotifyView/>
             </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:SettingsViewModel}">
+                <view:SetView/>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -7,29 +7,30 @@
 		xmlns:viewModel="clr-namespace:Moosic.MVVM.ViewModel"
 		mc:Ignorable="d"
 		Height="600" Width="920" 
-		WindowStyle="None" 
 		ResizeMode="NoResize"
 		Background="Transparent"
-		AllowsTransparency="True">
+		AllowsTransparency="True"
+        WindowStyle="None"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown">
 
-	<Window.DataContext>
-		<viewModel:MainViewModel/>
-	</Window.DataContext>
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
 
-	<Border Background="#272537"
+    <Border Background="#272537"
 			CornerRadius="20">
-		<Grid>
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="200"/>
-				<ColumnDefinition/>
-			</Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-			<Grid.RowDefinitions>
-				<RowDefinition Height="75"/>
-				<RowDefinition/>
-			</Grid.RowDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
-			<TextBlock Text="Moosic"
+            <TextBlock Text="Moosic"
 					   HorizontalAlignment="Left"
 					   VerticalAlignment="Center"
 					   Foreground="White"
@@ -37,36 +38,51 @@
 					   FontFamily="/Fonts/#Poppins"
 					   Margin="20,0,0,0"/>
 
-			<StackPanel Grid.Row="1" >
-				<RadioButton Content="Local Files"
+            <Button Grid.Column="1" 
+                    Margin="688,10,5,48" 
+                    Content="X" 
+                    BorderThickness="0,0,0,0" 
+                    Background="#FF272537" 
+                    Foreground="White"
+                    Click="ManualClose"/>
+
+            <StackPanel Grid.Row="1" >
+                <RadioButton Content="Local Files"
 							 Height="50"
 							 Foreground="White"
 							 FontSize="14"
 							 Style="{StaticResource MenuButtonTheme}"
 							 IsChecked="True"
 							 Command="{Binding PlayerViewCommand}" Checked="RadioButton_Checked_1"/>
-				
-				<RadioButton Content="Spotify"
+
+                <RadioButton Content="Spotify"
 							 Height="50"
 							 Foreground="White"
 							 FontSize="14"
 							 Style="{StaticResource MenuButtonTheme}"
 							 Command="{Binding SpotifyViewCommand}" Checked="RadioButton_Checked_2"/>
 
-				<RadioButton Content="SoundCloud"
-							 Height="50"
-							 Foreground="White"
-							 FontSize="14"
-							 Style="{StaticResource MenuButtonTheme}"/>
-				
-				<RadioButton Content="YouTube Music"
+                <RadioButton Content="SoundCloud"
 							 Height="50"
 							 Foreground="White"
 							 FontSize="14"
 							 Style="{StaticResource MenuButtonTheme}"/>
 
-			</StackPanel>
-			<TextBox Width="250" 
+                <RadioButton Content="YouTube Music"
+							 Height="50"
+							 Foreground="White"
+							 FontSize="14"
+							 Style="{StaticResource MenuButtonTheme}"/>
+
+                <RadioButton Content="Settings"
+							 Height="50"
+							 Foreground="White"
+							 FontSize="14"
+							 Style="{StaticResource MenuButtonTheme}"
+							 Command="{Binding SettingsViewCommand}" Checked="RadioButton_Checked_3"/>
+
+            </StackPanel>
+            <TextBox Width="250" 
 					 Height="40" 
 					 VerticalContentAlignment="Center"
 					 HorizontalAlignment="Left"
@@ -74,13 +90,12 @@
 					 Grid.Column="1"
 					 Style="{StaticResource ModernTextBox}"/>
 
-			<ContentControl Grid.Row="1" 
+            <ContentControl Grid.Row="1" 
 							Grid.Column="1" 
 							Margin="10"
 							Content="{Binding CurrentView}"/>
-			<Button Grid.Column="1" Content="Settings&#xD;&#xA;" HorizontalAlignment="Left" Height="40" Margin="651,0,0,0" VerticalAlignment="Center" Width="49" Click="Button_Click"/>
 
-		</Grid>
+        </Grid>
 
-	</Border>
+    </Border>
 </Window>
