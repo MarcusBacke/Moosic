@@ -74,6 +74,13 @@
 							 FontSize="14"
 							 Style="{StaticResource MenuButtonTheme}"/>
 
+                <RadioButton Content="Settings"
+							 Height="50"
+							 Foreground="White"
+							 FontSize="14"
+							 Style="{StaticResource MenuButtonTheme}"
+							 Command="{Binding SettingsViewCommand}" Checked="RadioButton_Checked_3"/>
+
             </StackPanel>
             <TextBox Width="250" 
 					 Height="40" 
@@ -87,7 +94,6 @@
 							Grid.Column="1" 
 							Margin="10"
 							Content="{Binding CurrentView}"/>
-            <Button Content="Settings&#xD;&#xA;" HorizontalAlignment="Left" Height="40" Margin="48,205,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click" Grid.Row="1"/>
 
         </Grid>
 

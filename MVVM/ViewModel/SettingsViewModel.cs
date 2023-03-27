@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Moosic.MVVM.ViewModel
 {
-    internal class SettingsViewModel
+    public class SettingsViewModel
     {
     }
 }
