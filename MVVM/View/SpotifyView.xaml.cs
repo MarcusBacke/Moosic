@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+//using TestStack.White.UIItems.WindowItems;
 
 namespace Moosic.MVVM.View
 {
@@ -17,7 +18,7 @@ namespace Moosic.MVVM.View
         public SpotifyView()
         {
             InitializeComponent();
-           // titleBar.MouseLeftButtonDown += (o, e) => DragMove();
+           //TitleBar.MouseLeftButtonDown += (o, e) => DragMove();
 
             Task.Run(async () => await SearchHelper.GetTokenAsync());
         }

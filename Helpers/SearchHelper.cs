@@ -1,4 +1,5 @@
 ﻿using Moosic.MVVM.ViewModel;
+
 using Newtonsoft.Json;
 using RestSharp;
 using Moosic.Models;
@@ -13,6 +14,31 @@ using static Moosic.Models.SpotifySearch;
 
 namespace Moosic.Helpers
 {
+    public class SpotifyPlayerHelper
+    {
+        private readonly SpotifyWebAPI _spotify;
+
+        public SpotifyPlayerHelper(string clientId, string clientSecret)
+        {
+            var auth = new CredentialsAuth(clientId, clientSecret);
+            Token token = auth.GetToken().Result;
+            _spotify = new SpotifyWebAPI { TokenType = token.TokenType, AccessToken = token.AccessToken };
+        }
+
+        public async Task PlayTrack(string trackId)
+        {
+            var playbackContext = new PlaybackContext
+            {
+                Uri = $"spotify:track:{trackId}",
+                Offset = new PlaybackBase { Uri = $"spotify:track:{trackId}" }
+            };
+
+            var playRequest = new PlayerResumePlaybackRequest(playbackContext);
+
+            await _spotify.ResumePlaybackAsync(playRequest);
+        }
+    }
+
     public static class SearchHelper
     {
         public static Token token { get; set; }
