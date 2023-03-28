@@ -4,8 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Moosic.MVVM.View"
-         mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+         mc:Ignorable="d" d:DesignWidth="800" Height="499">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -14,71 +13,110 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <StackPanel Margin="0,0,0,-39">
+    <StackPanel Margin="0,-20,0,-39">
         <TextBlock Text="Spotify"
                    Foreground="White"
                    FontSize="28"
                    HorizontalAlignment="Left"
                    FontFamily="/Fonts/#Poppins"
-                   Margin="0,0,0,20"/>
+                   Margin="20,-10,0,35"/>
         <Border Margin="10">
             <Grid>
-                <DockPanel RenderTransformOrigin="0.14,0.496" Margin="0,-29,0,41">
+                <DockPanel Margin="0,-29,0,41">
 
-                    <Grid Height="405" Width="299" RenderTransformOrigin="0.464,0.493" HorizontalAlignment="Left">
+                    <Grid Height="320" Width="299" HorizontalAlignment="Left">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="50" />
                             <RowDefinition Height="128*" />
                             <RowDefinition Height="141*"/>
-                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="0" />
                         </Grid.RowDefinitions>
-                        <TextBlock Text="Search Music"
-                                   Foreground="White"
-                                   FontFamily="/Fonts/#Poppins"
-                                   FontSize="16"
-                                   Margin="0,0,0,30" RenderTransformOrigin="0.492,0.612" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
-
-                        <StackPanel
-                       >
+                        <StackPanel>
 
                             <TextBox Width="279"
                             x:Name="txtSearch"
-                             KeyUp="txtSearch_KeyUp"
-                            Background="white" Opacity="0.5"
-                            Margin="10,20,0,0"
+                             KeyUp="txtSearch_KeyUp"     
+                            Margin="10,-20,0,0"
+                            
                             Style="{StaticResource TextBoxSearch}"
-                            Template="{StaticResource TextBoxBaseControlTemplate}" Height="27" VerticalAlignment="Bottom" HorizontalAlignment="Left" />
+                            Template="{StaticResource TextBoxBaseControlTemplate}" Height="28" HorizontalAlignment="Left" >
+                                <TextBox.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                        <GradientStop Color="#fbb554" Offset="0.0"/>
+                                        <GradientStop Color="#ff1143" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </TextBox.Background>
+                                
+                            </TextBox>
+                            
                         </StackPanel>
-                        <ListView
-                        x:Name="ListArtist"
-                        Grid.Row="1"
-                        Margin="10,10,10,10"
-                        Background="{StaticResource BackgroundColorWindow2}"
-                        ItemTemplate="{StaticResource ResourceKey=ListArtistTemplate}" Grid.RowSpan="2" RenderTransformOrigin="0.506,0.575" >
-                            <ListView.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform/>
-                                    <SkewTransform/>
-                                    <RotateTransform Angle="0.441"/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
-                            </ListView.RenderTransform>
+
+                        <ListView x:Name="ListArtist"
+          Grid.Row="1"
+          Margin="10,-25,10,0"
+          Background="{StaticResource BackgroundColorWindow2}"
+          ItemTemplate="{StaticResource ResourceKey=ListArtistTemplate}"
+          Grid.RowSpan="2">
+
+                            <ListView.Template>
+                                <ControlTemplate TargetType="ListView">
+                                    <Border CornerRadius="10" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                                                <GradientStop Color="#fbb554" Offset="0.0"/>
+                                                <GradientStop Color="#ff1143" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <ScrollViewer>
+                                            <ItemsPresenter />
+                                        </ScrollViewer>
+                                    </Border>
+                                </ControlTemplate>
+                            </ListView.Template>
                         </ListView>
 
-                        <StackPanel
-                        Grid.Row="3"
-                        Margin="141,10,0,0"
-                        HorizontalAlignment="Left"
-                        Orientation="Horizontal" Width="100">
-                            <TextBlock VerticalAlignment="Bottom" Text="Powered by" />
-                            <Image Height="20" Source="https://cdn.icon-icons.com/icons2/2201/PNG/512/spotify_logo_icon_134023.png" />
-                        </StackPanel>
+
                     </Grid>
 
                 </DockPanel>
 
 
             </Grid>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" CornerRadius="20 20 20 20" Margin="0 0 0 0" Width="702" Height="111">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                    <GradientStop Color="#fbb554" Offset="0.0"/>
+                    <GradientStop Color="#ff1143" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <StackPanel Orientation="Horizontal" Margin="0,0,26,0">
+                <Ellipse Width="60" Height="60" Margin="10 -40 0 0">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="\Images\the-doors-cover.jpg"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <StackPanel VerticalAlignment="Center" Margin="20 0 30 0">
+                    <TextBlock Text="Me" Foreground="Black" FontSize="22" FontWeight="Bold"/>
+                    <TextBlock Text="Me" Foreground="Black" FontSize="18" FontWeight="SemiBold"/>
+
+                </StackPanel>
+                <Button Content="Skip Back" Height="27" Width="68"/>
+                <Button Content="PLay" Height="27" Width="69"/>
+                <Button Content="Skip" Height="27" Width="68"/>
+                
+                             
+                <StackPanel Orientation="Horizontal"
+                        Margin="0,0,0,10">
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="Margin" Value="20,0,0,0"/>
+                        </Style>
+                    </StackPanel.Resources>
+
+                </StackPanel>
+                <Slider Height="20" Width="300"/>
+            </StackPanel>
         </Border>
     </StackPanel>
 

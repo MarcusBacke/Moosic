@@ -77,25 +77,13 @@
                 </StackPanel.Resources>
 
             </StackPanel>
-            <RadioButton Content="Play"
-							 Height="27"
-                             Click="btnOpenAudioFile_Click"
-                             Width="131"
-							 Foreground="White"
-							 FontSize="14"
-							 Style="{StaticResource MenuButtonTheme}"/>
-            <RadioButton Content="Skip"
-							 Height="27"
-                             Width="131"
-							 Foreground="White"
-							 FontSize="14"
-							 Style="{StaticResource MenuButtonTheme}"/>
-            <RadioButton Content="Skip back"
-							 Height="27"
-                             Width="131"
-							 Foreground="White"
-							 FontSize="14"
-							 Style="{StaticResource MenuButtonTheme}"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom"
+                        HorizontalAlignment="Center">
+                <Button Content="Skip Back" Height="27" Width="68"/>
+                <Button Content="PLay" Click="btnOpenAudioFile_Click" Height="27" Width="69"/>
+                <Button Content="Skip" Height="27" Width="68"/>
+                
+            </StackPanel>
             <StackPanel Orientation="Horizontal"
                         Margin="0,0,0,10">
                 <StackPanel.Resources>

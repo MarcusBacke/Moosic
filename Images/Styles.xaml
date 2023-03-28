@@ -7,7 +7,7 @@
 
 
     <SolidColorBrush x:Key="BackgroundColorWindow1" Color="#121212" />
-    <SolidColorBrush x:Key="BackgroundColorWindow2" Color="#3C3C3C" />
+    <SolidColorBrush x:Key="BackgroundColorWindow2" Color="#fbb554" Opacity="0.5" />
     <SolidColorBrush x:Key="FontColorBasic" Color="White" />
 
     <Style TargetType="Button">
@@ -19,6 +19,17 @@
     <Style x:Key="TextBoxSearch" TargetType="TextBox">
         <Setter Property="Width" Value="200" />
         <Setter Property="FontSize" Value="20" />
+        <Setter Property="CaretBrush" Value="#585858"/>
+        <Setter Property="Text" Value="SEARCH MUSIC"/>
+        <Style.Triggers>
+            <Trigger Property="Text" Value="SEARCH MUSIC">
+                <Setter Property="Foreground" Value="#A9A9A9"/>
+            </Trigger>
+            <Trigger Property="IsKeyboardFocused" Value="True">
+                <Setter Property="Foreground" Value="#585858"/>
+                <Setter Property="Text" Value=""/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <ControlTemplate x:Key="TextBoxBaseControlTemplate" TargetType="TextBoxBase">
