@@ -11,34 +11,14 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using static Moosic.Models.SpotifySearch;
+using System.Numerics;
+using System.Windows;
 
 namespace Moosic.Helpers
 {
-    public class SpotifyPlayerHelper
-    {
-        private readonly SpotifyWebAPI _spotify;
 
-        public SpotifyPlayerHelper(string clientId, string clientSecret)
-        {
-            var auth = new CredentialsAuth(clientId, clientSecret);
-            Token token = auth.GetToken().Result;
-            _spotify = new SpotifyWebAPI { TokenType = token.TokenType, AccessToken = token.AccessToken };
-        }
 
-        public async Task PlayTrack(string trackId)
-        {
-            var playbackContext = new PlaybackContext
-            {
-                Uri = $"spotify:track:{trackId}",
-                Offset = new PlaybackBase { Uri = $"spotify:track:{trackId}" }
-            };
-
-            var playRequest = new PlayerResumePlaybackRequest(playbackContext);
-
-            await _spotify.ResumePlaybackAsync(playRequest);
-        }
-    }
-
+    //Search Helper, 
     public static class SearchHelper
     {
         public static Token token { get; set; }
@@ -66,6 +46,8 @@ namespace Moosic.Helpers
 
             token = JsonConvert.DeserializeObject<Token>(msg);
         }
+  
+
 
         public static SpotifyResult SearchArtistOrSong(string searchWord)
         {
@@ -85,5 +67,16 @@ namespace Moosic.Helpers
             }
 
         }
+    
+        public static async Task PlaySong(string songID)
+        {
+            var client = new RestClient("https://api.spotify.com/v1/player");
+            client.AddDefaultHeader("Authorization", $"Bearer {token.access_token}");
+            var request = new RestRequest("PUT");
+            request.AddJsonBody(new { uris = new string[] { $"spotify:track:{songID}" } });
+            var response = await client.ExecuteAsync(request);
+        }
     }
+    
 }
+

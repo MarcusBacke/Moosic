@@ -7,7 +7,7 @@
 
 
     <SolidColorBrush x:Key="BackgroundColorWindow1" Color="#121212" />
-    <SolidColorBrush x:Key="BackgroundColorWindow2" Color="#fbb554" Opacity="0.5" />
+    <SolidColorBrush x:Key="BackgroundColorWindow2" Color="#fbb554"  />
     <SolidColorBrush x:Key="FontColorBasic" Color="White" />
 
     <Style TargetType="Button">
@@ -19,17 +19,6 @@
     <Style x:Key="TextBoxSearch" TargetType="TextBox">
         <Setter Property="Width" Value="200" />
         <Setter Property="FontSize" Value="20" />
-        <Setter Property="CaretBrush" Value="#585858"/>
-        <Setter Property="Text" Value="SEARCH MUSIC"/>
-        <Style.Triggers>
-            <Trigger Property="Text" Value="SEARCH MUSIC">
-                <Setter Property="Foreground" Value="#A9A9A9"/>
-            </Trigger>
-            <Trigger Property="IsKeyboardFocused" Value="True">
-                <Setter Property="Foreground" Value="#585858"/>
-                <Setter Property="Text" Value=""/>
-            </Trigger>
-        </Style.Triggers>
     </Style>
 
     <ControlTemplate x:Key="TextBoxBaseControlTemplate" TargetType="TextBoxBase">
@@ -85,6 +74,49 @@
             </StackPanel>
         </StackPanel>
     </DataTemplate>
+    <DataTemplate x:Key="Playertemplate">
+        <StackPanel Orientation="Horizontal" Margin="0,20,30,0">
+            <Ellipse Width="60" Height="60" Margin="10 0 0 0">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="{Binding Image}"/>
+                </Ellipse.Fill>
+            </Ellipse>
+
+            <StackPanel VerticalAlignment="Center" Margin="20 0 30 0">
+                <TextBlock Text="{Binding Name}" Foreground="Black" FontSize="22" FontWeight="Bold"/>
+              
+            </StackPanel>
+           
+        <Button Content="Pause" Height="27" Width="68"/>
+        <Button Content="PLay" Height="27" Width="69"/>
+        <Button Content="Skip" Height="27" Width="68"/>
+
+       <StackPanel Orientation="Horizontal"
+                        Margin="0,0,0,10">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Margin" Value="20,0,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+
+        </StackPanel>
+
+
+
+             
+        <Slider Height="20" Width="300"/>
+    </StackPanel>
+                
+    </DataTemplate>
+    
+      
+       
+
+       
+        
+
+
+      
 
 
 </ResourceDictionary>

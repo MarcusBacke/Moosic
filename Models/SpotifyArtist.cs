@@ -14,4 +14,5 @@ namespace Moosic.Models
         public string Followers { get; set; }
         public string Popularity { get; set; }
     }
+ 
 }

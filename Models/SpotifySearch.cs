@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Moosic.Models.SpotifySearch;
 
 namespace Moosic.Models
 {
@@ -53,7 +54,11 @@ namespace Moosic.Models
 
         public class SpotifyResult
         {
+
             public Artists artists { get; set; }
+
         }
+
     }
+  
 }
